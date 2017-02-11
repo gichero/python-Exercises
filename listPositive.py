@@ -1,5 +1,7 @@
-fruit = [34, 54, 23, -65, 11, 98, -31]
+random = [34, 54, 23, -65, 11, 98, -31]
 
-for x in fruit:
+positive = random[]
+
+for x in random:
     if x > 0:
-        print x 
+        print x
