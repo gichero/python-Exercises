@@ -28,16 +28,22 @@ def pentagon(size, color):
    end_fill()
 
 
-def hexagon():
-   for i in range(6):
+def hexagon(size, color):
+    fillcolor(color)
+    begin_fill()
+    for i in range(6):
        forward(100)
        left(60)
+    end_fill()
 
 
-def octagon():
-   for i in range(8):
-       forward(100)
-       left(45)
+def octagon(size, color):
+    fillcolor(color)
+    begin_fill()
+    for i in range(8):
+        forward(100)
+        left(45)
+        end_fill()
 
 
 def star(size, color):
@@ -51,17 +57,21 @@ def star(size, color):
    end_fill()
 
 
-def draw_circle():
-   circle(100)
+def draw_circle(color):
+    fillcolor(color)
+    begin_fill()
+    circle(100)
+
+    end_fill()
 
 
 if __name__ == '__main__':
-   draw_circle()
+   draw_circle(size, color)
    draw_a_square(size, color)
    draw_an_equilateral_triangle(size, color)
    star(size, color)
-   hexagon()
-   octagon()
+   hexagon(size, color)
+   octagon(size, color)
    pentagon(size, color)
 
    mainloop()
