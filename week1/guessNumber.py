@@ -1,6 +1,6 @@
 secret_number = 7
 print 'I am thinking of a number between 1 and 10'
- while True:
+while True
 
      guess = int(raw_input("What's the number? "))
      if guess == secret_number:
