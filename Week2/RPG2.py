@@ -49,6 +49,12 @@ class Hero(Character):
             self.coins -= item.cost
             item.apply(hero)
 
+    # def receive_damage(self, points):
+    #     self.health -= points
+    #     print "%s received %d damage." % (self.name, points)
+    #     if self.health <= 0:
+    #         print "%s is dead." % self.name
+
 
     # def attack(self, enemy):
     #     morePower = random.random() < 0.3
@@ -61,12 +67,14 @@ class Goblin(Character):
         self.name = 'goblin'
         self.health =41
         self.power = 33
+        self.bounty = 5
 
 class Wizard(Character):
     def __init__(self):
         self.name = 'wizard'
         self.health = 58
         self.power = 41
+        self.bounty = 6
 
     def attack(self, enemy):
         swap_power = random.random() > 0.5
@@ -169,8 +177,8 @@ class Armor(object):
     cost = 7
     name = 'armor'
     def apply(self, character):
-        character.health +=2
-        print "%s's health is increased to by %d." %(character.name, character.health)
+        character.power +=2
+        print "%s's power is increased to by %d." %(character.name, character.power)
 
 
 class Tonic(object):
@@ -185,7 +193,7 @@ class Sword(object):
     name = 'sword'
     def apply(self, character):
         character.power += 2
-        print "%s's power increased to %d." % (character.name, character.health)
+        print "%s's power increased to %d." % (character.name, character.power)
 
 class Spear(object):
     cost = 8
