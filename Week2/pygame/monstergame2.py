@@ -7,6 +7,7 @@ class Monster(object):
     def __init__(self, x, y):
         self.x = x
         self.y = y
+        #self.speed = speed
         # self.image = pygame.image.load('monster.png').convert_alpha()
 
     def moveright(self):
@@ -21,21 +22,7 @@ class Monster(object):
     def moveup(self):
         self.y -= 1
 
-    def upright(self):
-        self.x += 1
-        self.y -= 1
-
-    def downright(self):
-        self.x -= 1
-        self.y += 1
-
-    def upleft(self):
-        self.y += 1
-        self.x -= 1
-
-    def downleft(self):
-        self.y -= 1
-        self.x += 1
+    #
 
     # def monstericon(self):
     #     screen.blit(self.image, (self.x, self.y))
@@ -44,6 +31,7 @@ class Hero(object):
     def __init__(self, x, y):
         self.x = x
         self.y = y
+        #self.speed = speed
         # self.image = pygame.image.load('hero.png').convert_alpha()
 
     def moveright(self):
@@ -80,8 +68,10 @@ def main():
             if event.type == pygame.QUIT:
                 stop_game = True
         counter = 0
-        movelist = ['movedown', 'moveup', 'moveleft', 'moveright', 'upright', 'downright', 'downleft', 'upleft']
-        movement = movelist[random.randint(0, 7)]
+        movelist = ['movedown', 'moveup', 'moveleft', 'moveright']
+        # 'upright', 'downright', 'downleft', 'upleft']
+
+        movement = movelist[random.randint(0, 3)]
 
         while counter <= 120:
             if movement == 'movedown':
