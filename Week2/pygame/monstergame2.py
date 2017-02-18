@@ -3,6 +3,8 @@ import time
 import random
 
 
+
+
 class Monster(object):
     def __init__(self, x, y):
         self.x = x
