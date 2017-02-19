@@ -50,10 +50,11 @@ def main():
     goalie = Goalie(245, 10)
     ball = Ball(250, 180)
     pygame.init()
-    screen = pygame.display.set_mode((width, height))
+
+    sscreen = pygame.display.set_mode((width, height))
     pygame.display.set_caption('Penalty Shootout')
     clock = pygame.time.Clock()
-    #stop_game = False
+    stop_game = False
     gameExit = False
     image = pygame.image.load('football-pitch2.png').convert_alpha()
     playerimage = pygame.image.load('hero.png').convert_alpha()
