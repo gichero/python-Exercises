@@ -51,14 +51,14 @@ def main():
     ball = Ball(250, 180)
     pygame.init()
 
-    sscreen = pygame.display.set_mode((width, height))
+    screen = pygame.display.set_mode((width, height))
     pygame.display.set_caption('Penalty Shootout')
     clock = pygame.time.Clock()
     stop_game = False
     gameExit = False
     image = pygame.image.load('football-pitch2.png').convert_alpha()
-    playerimage = pygame.image.load('hero.png').convert_alpha()
-    goalieimage = pygame.image.load('monster.png').convert_alpha()
+    playerimage = pygame.image.load('monster.png').convert_alpha()
+    goalieimage = pygame.image.load('howard.png').convert_alpha()
     ballimage = pygame.image.load('football.png').convert_alpha()
     counter = 0
 
@@ -91,7 +91,7 @@ def main():
                 screen.blit(ballimage,(250,180))
 
                 pygame.display.update()
-                clock.tick(60)
+                clock.tick(10)
 
             # if movement >=165 and movement <= 300:
             #
@@ -109,7 +109,7 @@ def main():
             screen.blit(ballimage,(250,180))
 
             pygame.display.update()
-            clock.tick(60)
+            clock.tick(10)
 
         screen.blit(image, (0, 0))
         screen.blit(playerimage,(250,200))
@@ -117,7 +117,7 @@ def main():
         screen.blit(ballimage,(250,180))
 
         pygame.display.update()
-        clock.tick(60)
+        clock.tick(10)
 
 
     pygame.quit()
