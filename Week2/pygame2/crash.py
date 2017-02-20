@@ -4,7 +4,6 @@ import random
 
 pygame.init()
 
-
 display_width = 800
 display_height = 600
 
@@ -48,22 +47,18 @@ def text_objects(text, font):
     textSurface = font.render(text, True, black)
     return textSurface, textSurface.get_rect()
 
-
 def crash():
 
     largeText = pygame.font.SysFont("comicsansms",115)
-    TextSurf, TextRect = text_objects("You Crashed", largeText)
+    TextSurf, TextRect = text_objects("DOH!", largeText)
     TextRect.center = ((display_width/2),(display_height/2))
     gameDisplay.blit(TextSurf, TextRect)
-
 
     while True:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
                 quit()
-
-
 
         button("Play Again",150,450,100,50,green,bright_green,game_loop)
         button("Quit",550,450,100,50,red,bright_red,quitgame)
@@ -86,40 +81,11 @@ def button(msg,x,y,w,h,ic,ac,action=None):
     textRect.center = ( (x+(w/2)), (y+(h/2)) )
     gameDisplay.blit(textSurf, textRect)
 
-
 def quitgame():
     pygame.quit()
     quit()
 
-def unpause():
-    global pause
-    pygame.mixer.music.unpause()
-    pause = False
-
-
-def paused():
-
-    largeText = pygame.font.SysFont("comicsansms",115)
-    TextSurf, TextRect = text_objects("Paused", largeText)
-    TextRect.center = ((display_width/2),(display_height/2))
-    gameDisplay.blit(TextSurf, TextRect)
-
-
-    while pause:
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                pygame.quit()
-                quit()
-
-
-        button("Continue",150,450,100,50,green,bright_green,unpause)
-        button("Quit",550,450,100,50,red,bright_red,quitgame)
-
-        pygame.display.update()
-        clock.tick(15)
-
-
-
+    
 def game_loop():
     global pause
 
@@ -129,8 +95,8 @@ def game_loop():
     x_change = 0
 
     thing_startx = random.randrange(0, display_width)
-    thing_starty = -600
-    thing_speed = 4
+    thing_starty = -100
+    thing_speed = 3
     thing_width = 100
     thing_height = 100
 
@@ -156,7 +122,6 @@ def game_loop():
                     pause = True
                     paused()
 
-
             if event.type == pygame.KEYUP:
                 if event.key == pygame.K_LEFT or event.key == pygame.K_RIGHT:
                     x_change = 0
@@ -165,8 +130,6 @@ def game_loop():
         gameDisplay.fill(white)
 
         things(thing_startx, thing_starty, thing_width, thing_height, block_color)
-
-
 
         thing_starty += thing_speed
         car(x,y)
@@ -180,7 +143,6 @@ def game_loop():
             thing_startx = random.randrange(0,display_width)
             dodged += 1
             thing_speed += 1
-            #thing_width += (dodged * 1.2)
 
         if y < thing_starty+thing_height:
             print('y crossover')
@@ -191,7 +153,6 @@ def game_loop():
 
         pygame.display.update()
         clock.tick(60)
-
 
 game_loop()
 pygame.quit()
