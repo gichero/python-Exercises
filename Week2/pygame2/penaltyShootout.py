@@ -22,6 +22,8 @@ class Goalie(object):
         self.name = 'goalie'
         self.x = x
         self.y = y
+        self.speed_x = 0
+        self.speed_y = 0
 
     def moveright(self):
         self.x += 1
@@ -80,10 +82,10 @@ def main():
             # if movement == moveright and movement == moveleft:
             #     movement +=1
             if event.type == pygame.KEYDOWN:
-                if event.type == pygame.K_LEFT:
-                    x -= 10
-                if event.type == pygame.K_RIGHT:
-                    x -= 10
+                if event.type == pygame.KEY_LEFT:
+                    goalie.speed_x -= 5
+                if event.type == pygame.KEY_RIGHT:
+                    golalie.speed_y += 5
 
                 screen.blit(image,(0, 0))
                 screen.blit(playerimage,(250,200))
