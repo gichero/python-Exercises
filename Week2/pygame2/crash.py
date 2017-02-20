@@ -16,7 +16,7 @@ green = (0,200,0)
 bright_red = (255,0,0)
 bright_green = (0,255,0)
 
-block_color = (53,115,255)
+block_color = (184,0,46)
 
 car_width = 43
 
@@ -85,7 +85,7 @@ def quitgame():
     pygame.quit()
     quit()
 
-    
+
 def game_loop():
     global pause
 
