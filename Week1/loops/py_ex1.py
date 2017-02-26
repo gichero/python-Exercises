@@ -17,13 +17,25 @@
 #         print sum
 
 #problem 3
-current = 1
-previous = 1
-sum = 0
+# current = 1
+# previous = 1
+# sum = 0
+#
+# while current < 4000000:
+#     if current % 2 == 0:
+#         sum+= current
+#     current, previous = current + previous, current
+#
+#     print sum
 
-while current < 4000000:
-    if current % 2 == 0:
-        sum+= current
-    current, previous = current + previous, current
+# problem 4
 
-    print sum
+n = 600851475143
+i = 2
+
+while i * i < n:
+    while n%i == 0:
+        n = n / i
+    i = i + 1
+
+print (n)
