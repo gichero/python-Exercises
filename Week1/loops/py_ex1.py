@@ -30,12 +30,20 @@
 
 # problem 4
 
-n = 600851475143
-i = 2
+# n = 600851475143
+# i = 2
+#
+# while i * i < n:
+#     while n%i == 0:
+#         n = n / i
+#     i = i + 1
+#
+# print (n)
 
-while i * i < n:
-    while n%i == 0:
-        n = n / i
-    i = i + 1
+# problem 5
 
-print (n)
+num = range(100, 1000)
+ans = 0
+for i in num:
+    if i*i == ans:
+        return int(str(ans)[::-1])==ans
